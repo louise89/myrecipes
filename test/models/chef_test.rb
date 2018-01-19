@@ -1,0 +1,74 @@
+require 'test_helper'
+
+class ChefTest < ActiveSupport::TestCase
+
+  def setup
+    @chef = Chef.new(chefname: "louise", email: "louise@myrecipes.com")
+  end
+
+  test "chef should be valid" do
+    assert @chef.valid?
+  end
+
+  test "chefname should be present" do
+    @chef.chefname = ""
+    assert_not @chef.valid?
+  end
+
+  test "chefname shouldn't be less than 5 characters" do
+    @chef.chefname = "a" * 3
+    assert_not @chef.valid?
+  end
+
+  test "chefname shouldn't be more than 50 characters" do
+    @chef.chefname = "a" * 51
+    assert_not @chef.valid?
+  end
+
+  test "description should be present" do
+    @chef.email = ""
+    assert_not @chef.valid?
+  end
+
+  test "email shouldn't be less than 5 characters" do
+    @chef.email = "a" * 3
+    assert_not @chef.valid?
+  end
+
+  test "email shouldn't be more than 50 characters" do
+    @chef.email = "a" * 51
+    assert_not @chef.valid?
+  end
+
+  test "email should accept email format" do
+    valid_emails = %w[user@example.com TEST@gmail.com M.First@yahoo.ca john+smith@co.uk.org]
+     valid_emails.each do |valids|
+     @chef.email = valids
+     assert @chef.valid?, "#{valids.inspect} should be valid"
+   end
+  end
+
+  test "email should accpet correct formats" do
+    @chef.email = "user@example.com"
+    assert @chef.valid?
+  end
+
+
+  test "email should reject invalid formats" do
+    @chef.email = "www.myrecipes.com"
+    assert_not @chef.valid?
+  end
+
+  test "email should be unique" do
+    duplicate_chef = @chef.dup
+    duplicate_chef.email = @chef.email
+    @chef.save
+    assert_not duplicate_chef.valid?
+  end
+
+  test "email should be case insensitive" do
+    @chef.email = "LoUiSe@MyRecipes.com"
+    assert @chef.valid?
+  end
+
+end
