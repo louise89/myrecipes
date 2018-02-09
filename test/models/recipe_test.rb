@@ -36,4 +36,12 @@ class RecipeTest < ActiveSupport::TestCase
     assert_not @recipe.valid?
   end
 
+  test "Create new valid recipe" do
+
+  end
+
+  test "invalid recipe created" do
+    
+  end
+
 end
