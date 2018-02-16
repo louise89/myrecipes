@@ -23,6 +23,22 @@ def create
   end
 end
 
+def edit
+  @recipe = Recipe.find(params[:id])
+  if @recipe.save
+  else
+    render 'edit'
+  end
+end
+
+def update
+  @recipe = Recipe.find(params[:id])
+  if @recipe.update(recipe_params)
+    else
+  render 'edit'
+  end
+end
+
 private
 
     def recipe_params
