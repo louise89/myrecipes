@@ -31,8 +31,8 @@ class RecipesTest < ActionDispatch::IntegrationTest
     assert_match @recipe.name.capitalize, response.body
     assert_match @recipe.description, response.body
     assert_match @chef.chefname, response.body
-    assert_select 'a[href=?]', edit_recipe_path(@recipe), text: "Edit Recipe"
-    assert_select 'a[href=?]', recipe_path(@recipe), text: "Delete Recipe"
+    assert_select 'a[href=?]', edit_recipe_path(@recipe), text: "Edit recipe"
+    assert_select 'a[href=?]', recipe_path(@recipe), text: "Delete this recipe"
     assert_select 'a[href=?]', recipes_path, text: "Return to Recipes"
   end
 
