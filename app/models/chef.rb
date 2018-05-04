@@ -5,7 +5,7 @@ class Chef < ApplicationRecord
             uniqueness: true,
             format: {with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i,
                     message: "Invalid format for email address"}
-    has_many :recipes
+    has_many :recipes, dependent: :destroy
     has_secure_password
     validates :password, presence: true, length: {minimum: 5, maximum: 50}, allow_nil: true
 end
