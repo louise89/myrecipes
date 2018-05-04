@@ -115,3 +115,24 @@ h1 {
 .colormatch a {
   color: #351F39;
 }
+
+.listing {
+  list-style: none;
+  padding-left: 0;
+}
+
+.chef-title {
+  color: #B79BA5;
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+a {
+  color: #B79BA5;
+  font-weight: normal;
+  border-radius: 0;
+}
+
+a:hover {
+  color: #956a78
+}
