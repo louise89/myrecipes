@@ -21,7 +21,7 @@
           <ul class="dropdown-menu">
             <li><%= link_to "Create a new Recipe", new_recipe_path %></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Something else here</a></li>
+            <li><%= link_to "View all Recipes", recipes_path %></li>
           </ul>
         </li>
       </ul>
@@ -34,6 +34,8 @@
       </form>
 
       <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to 'Log in', login_path %></li>
+        <li><%= link_to 'Log out', logout_path, method: :delete %></li>
       </ul>
 
     </div><!-- /.navbar-collapse -->
