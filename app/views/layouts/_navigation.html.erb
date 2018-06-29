@@ -1,43 +1,25 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to "MyRecipes", root_path, class: "navbar-brand", id: "logo" %>
+<ul>
+  <li>
+    <%= link_to "MyRecipes", root_path, id: "logo" %></li>
+    <li><%= link_to "Create a new Recipe", new_recipe_path %></li>
+    <li><%= link_to "View all Recipes", recipes_path %></li>
+    <li> <%= link_to "Chefs", chefs_path %></li>
+    <!-- need to fix the search bar -->
+    <li><form class="navbar-form navbar-left">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form></li>
+
+    <div class="dropdown">
+      <button class="dropbtn">Recipes</a>
+      <div class="dropdown-content">
+      <a href"<%= link_to new_recipe_path %>">Create a new Recipe</a>
+      <a href"<%= link_to recipes_path %>">View all Recipes</a>
     </div>
+  </li>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="navbar-collapse">
-
-      <ul class="nav navbar-nav">
-        <li> <%= link_to "Chefs", chefs_path %></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Recipes <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><%= link_to "Create a new Recipe", new_recipe_path %></li>
-            <li role="separator" class="divider"></li>
-            <li><%= link_to "View all Recipes", recipes_path %></li>
-          </ul>
-        </li>
-      </ul>
-
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to 'Log in', login_path %></li>
-        <li><%= link_to 'Log out', logout_path, method: :delete %></li>
-      </ul>
-
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+    <li style="float:right"><%= link_to 'Log in', login_path %></li>
+    <li style="float:right"><%= link_to 'Log out', logout_path, method: :delete %></li>
+  </ul>
