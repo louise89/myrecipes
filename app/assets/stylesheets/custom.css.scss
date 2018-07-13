@@ -1,19 +1,93 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+@font-face {
+  font-family: "Kaushan";
+  src: url('kaushan-script/KaushanScript-Regular.otf') format("truetype");
+}
 
+@font-face {
+  font-family: "Montserrat";
+  src: url('montserrat/Montserrat-Regular.otf') format("truetype");
+}
 
 #logo {
-  float: left;
-  font-size: 1.7em;
-  color: #DAE9E4;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  font-weight: bold;
+  color: #BA7796;
+  font-family: "Kaushan";
 }
 
 #logo:hover {
-  color: #A0C1B8;
+  color: #AF877B;
   text-decoration: none;
+}
+
+ul {
+  background-color: #F5ECE5;
+  list-style-type: none;
+  font-family: "Montserrat";
+  position: relative;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #BA7796;
+    text-align: center;
+    padding: 12px 10px;
+    font-size: 1em;
+    text-decoration: none;
+
+}
+
+li a:hover {
+  background-color: #F5ECE5;
+  color: #AF877B;
+}
+
+li a, .dropbtn {
+    background-color: #F5ECE5;
+    color: #BA7796;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    font-family: "Montserrat";
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #F5ECE5;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #F5ECE5}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #F5ECE5;
+    color: #af877b;
+    box-shadow: bold;
+}
+
+.active {
+  background-color: #F5ECE5;
+  color: #af877b;
 }
 
 .centre {
@@ -27,19 +101,22 @@
 }
 
 .jumbotron h1 {
-  color: #351F39;
+  text-align: center;
+  color: #BA7796;
+  font-family: "Kaushan";
 }
 
 .btn-xlarge {
-  background-color: #726A95;
-  color: #dae9e4;
-  border: #351f39
+  background-color: #BA7796;
+  color: #F5ECE5;
+  border: #BA7796;
+  font-family: "Montserrat";
 }
 
 .btn-xlarge:hover {
-  background-color: #351f39;
-  color: #dae9e4;
-  border: #726A95;
+  background-color: #F5ECE5;
+  color: #BA7796;
+  border: #F5ECE5;
 }
 
 .footer {
@@ -48,39 +125,22 @@
    height: 50px;
    bottom: 0;
    width: 100%;
-   background-color: #351f39;
-   color: #dae9e4;
+   background-color: #F5ECE5;
+   color: #BA7796;
    text-align: center;
-   font-family: sans-serif;
+   font-family: "Montserrat";
 }
 
 body {
-  background-color: #dae9e4;
-  color: #351F39;
+  background-color: #F5ECE5;
+  color: #BA7796;
 }
 
-.navbar-default {
-  background-color: #351f39;
-}
-
-.navbar-default .navbar-nav > li > a {
-  color: #DAE9E4;
-}
-
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-  background-color: #2c1a2f;
-  color: #a0c1b8;
-}
-
-.navbar-default .navbar-nav > li > a:hover {
-  background-color: #2c1a2f;
-  color: #a0c1b8;
-}
 
 .btn-default {
   background-color: #726A95;
-  color: #dae9e4;
-  border: #351f39
+  color: #F5ECE5;
+  border: #BA7796
 }
 
 .description {
@@ -88,32 +148,32 @@ body {
 }
 
 .well {
-  background: linear-gradient(#dae9e4, #92b0a8);
-  border-top-color: #8b85a8;
-  color: #351f39;
+  background: linear-gradient(#F5ECE5, #AF877B);
+  border-top-color: #AF877B;
+  color: #BA7796;
   text-align: center;
   font-family: sans-serif;
 }
 
 hr {
-  border-color: #8b85a8;
+  border-color: #AF877B;
 }
 
 h1 {
-  color: #351F39;
+  color: #BA7796;
   text-align: center;
   font-family: sans-serif;
 }
 
 .para {
-  color: #351F39;
+  color: #BA7796;
   text-align: center;
   font-family: sans-serif;
   font-size: 16px;
 }
 
 .colormatch a {
-  color: #351F39;
+  color: #BA7796;
 }
 
 .listing {
@@ -122,17 +182,41 @@ h1 {
 }
 
 .chef-title {
-  color: #B79BA5;
+  color: #BA7796;
   font-weight: bold;
   font-size: 1.25em;
 }
 
 a {
-  color: #956a78;
+  color: #AF877B;
   font-weight: normal;
   border-radius: 0;
 }
 
 a:hover {
-  color: #B79BA5
+  color: #BA7796
 }
+
+// .navbar-default {
+//   background-color: #351f39;
+// }
+//
+// .navbar-default .navbar-nav > li > a {
+//   color: #F5ECE5;
+// }
+//
+// .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+//   background-color: #2c1a2f;
+//   color: #a0c1b8;
+// }
+//
+// .navbar-default .navbar-nav > li > a:hover {
+//   background-color: #2c1a2f;
+//   color: #a0c1b8;
+// }
+//
+// .btn-default {
+//   background-color: #726A95;
+//   color: #F5ECE5;
+//   border: #F5ECE5
+// }
